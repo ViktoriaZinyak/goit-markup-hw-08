@@ -542,6 +542,11 @@ header {
   text-transform: uppercase;
   color: var(--second-title-color);
 }
+@media screen and (min-width: 768px) {
+  .features-list__title {
+    text-align: left;
+  }
+}
 .features-list__text {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -760,6 +765,11 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__thumb {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -1188,39 +1198,54 @@ header {
   color: var(--accent-color);
 }
 
-.icon-check {
-  fill: transparent;
-}
-
 .check-field {
   margin-bottom: 30px;
 }
 
-.check-square {
-  display: inline-block;
+.check-wrap {
   margin-right: 8px;
+  border: solid 2px var(--header-color);
+  border-radius: 2px;
   width: 16px;
   height: 15px;
-  background-image: url(../images/icon-ckeck-square.svg);
-  transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 1200px) {
-  .check-square {
-    margin-right: 8.4px;
+  .check-wrap {
+    margin-right: 8.38px;
   }
 }
 
+.check-icon {
+  fill: transparent;
+}
+
+.input-check:checked + .checkbox-label .check-wrap {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.input-check:checked + .checkbox-label .check-icon {
+  fill: var(--main-title-color);
+}
+
+.checkbox-label {
+  font-size: 12px;
+}
 @media screen and (min-width: 480px) {
   .checkbox-label {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
-    font-size: 12px;
   }
 }
-
-.checkbox-hidden:checked + .checkbox-label .check-square {
-  background-image: url(../images/icon-checked.svg);
+@media screen and (min-width: 1200px) {
+  .checkbox-label {
+    font-size: 14px;
+  }
 }
 
 .checkbox-btn {

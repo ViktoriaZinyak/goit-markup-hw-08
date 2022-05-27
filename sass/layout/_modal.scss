@@ -148,37 +148,48 @@
   color: var(--accent-color);
 }
 
-.icon-check {
-  fill: transparent;
-}
-
 .check-field {
   margin-bottom: 30px;
 }
 
-.check-square {
-  display: inline-block;
+.check-wrap {
   margin-right: 8px;
+  border: solid 2px var(--header-color);
+  border-radius: 2px;
   width: 16px;
   height: 15px;
-  background-image: url(../images/icon-ckeck-square.svg);
-  transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   @media screen and (min-width: 1200px) {
-    margin-right: 8.4px;
+    margin-right: 8.38px;
   }
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-icon {
+  fill: transparent;
+}
+
+.input-check:checked + .checkbox-label .check-wrap {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.input-check:checked + .checkbox-label .check-icon {
+  fill: var(--main-title-color);
 }
 
 .checkbox-label {
+  font-size: 12px;
   @media screen and (min-width: 480px) {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
-    font-size: 12px;
   }
-}
-
-.checkbox-hidden:checked + .checkbox-label .check-square {
-  background-image: url(../images/icon-checked.svg);
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
 }
 
 .checkbox-btn {
